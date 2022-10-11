@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Decision Tree (Tugas 6) &#8212; Data Mining</title>
+    <title>UTS &#8212; Data Mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Decision Tree (Tugas 6)" href="Tugas6.html" />
@@ -152,7 +150,9 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Decision Tree (Tugas 6)
+   <strong>
+    UTS
+   </strong>
   </a>
  </li>
 </ul>
@@ -379,9 +379,34 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gini-index">
-   Gini Index
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <strong>
+    UTS
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#soal">
+     <strong>
+      SOAL
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metode-knn">
+   <strong>
+    Metode KNN
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metode-decision-tree">
+   <strong>
+    Metode Decision Tree
+   </strong>
   </a>
  </li>
 </ul>
@@ -393,7 +418,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Decision Tree (Tugas 6)</h1>
+                <h1>UTS</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -403,9 +428,34 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#gini-index">
-   Gini Index
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   <strong>
+    UTS
+   </strong>
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#soal">
+     <strong>
+      SOAL
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metode-knn">
+   <strong>
+    Metode KNN
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metode-decision-tree">
+   <strong>
+    Metode Decision Tree
+   </strong>
   </a>
  </li>
 </ul>
@@ -418,25 +468,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="decision-tree-tugas-6">
-<h1>Decision Tree (Tugas 6)<a class="headerlink" href="#decision-tree-tugas-6" title="Permalink to this headline">#</a></h1>
-<section id="gini-index">
-<h2>Gini Index<a class="headerlink" href="#gini-index" title="Permalink to this headline">#</a></h2>
-<p>Rumus :</p>
-<p>Gini =  $<span class="math notranslate nohighlight">\( 1 - sigma_1 -_n (p_i)^2 \)</span>$</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="uts">
+<h1><strong>UTS</strong><a class="headerlink" href="#uts" title="Permalink to this headline">#</a></h1>
+<section id="soal">
+<h2><strong>SOAL</strong><a class="headerlink" href="#soal" title="Permalink to this headline">#</a></h2>
+<p>Lakukan analisa terhadap data pada  <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Coimbra">https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Coimbra</a>  dengan menggunakan klasifikasi</p>
+<ul class="simple">
+<li><p>metode KNN</p></li>
+<li><p>metode pohon keputusan (Desision tree)</p></li>
+</ul>
+<p>Proses analisa dilaporkan dan diupload di github ( menggunakan jupyter book)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="c1">#membaca data iris</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/datamining/tugas/Iris.csv&#39;</span><span class="p">)</span>
+<span class="c1">#membaca data kanker </span>
+<span class="n">data_kp</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/datamining/tugas/dataR2.csv&#39;</span><span class="p">)</span>
 <span class="c1">#menampilkan 5 data teratas</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">data_kp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-7e264e6a-1892-44bc-a04b-19843b9414c1">
+  <div id="df-28652154-ee38-4164-844d-6b706aab5fa0">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -456,64 +510,88 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Id</th>
-      <th>SepalLengthCm</th>
-      <th>SepalWidthCm</th>
-      <th>PetalLengthCm</th>
-      <th>PetalWidthCm</th>
-      <th>Species</th>
+      <th>Age</th>
+      <th>BMI</th>
+      <th>Glucose</th>
+      <th>Insulin</th>
+      <th>HOMA</th>
+      <th>Leptin</th>
+      <th>Adiponectin</th>
+      <th>Resistin</th>
+      <th>MCP.1</th>
+      <th>Classification</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>48</td>
+      <td>23.500000</td>
+      <td>70</td>
+      <td>2.707</td>
+      <td>0.467409</td>
+      <td>8.8071</td>
+      <td>9.702400</td>
+      <td>7.99585</td>
+      <td>417.114</td>
       <td>1</td>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>83</td>
+      <td>20.690495</td>
+      <td>92</td>
+      <td>3.115</td>
+      <td>0.706897</td>
+      <td>8.8438</td>
+      <td>5.429285</td>
+      <td>4.06405</td>
+      <td>468.786</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>82</td>
+      <td>23.124670</td>
+      <td>91</td>
+      <td>4.498</td>
+      <td>1.009651</td>
+      <td>17.9393</td>
+      <td>22.432040</td>
+      <td>9.27715</td>
+      <td>554.697</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>68</td>
+      <td>21.367521</td>
+      <td>77</td>
+      <td>3.226</td>
+      <td>0.612725</td>
+      <td>9.8827</td>
+      <td>7.169560</td>
+      <td>12.76600</td>
+      <td>928.220</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>86</td>
+      <td>21.111111</td>
+      <td>92</td>
+      <td>3.549</td>
+      <td>0.805386</td>
+      <td>6.6994</td>
+      <td>4.819240</td>
+      <td>10.57635</td>
+      <td>773.920</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-7e264e6a-1892-44bc-a04b-19843b9414c1')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-28652154-ee38-4164-844d-6b706aab5fa0')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -564,12 +642,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-7e264e6a-1892-44bc-a04b-19843b9414c1 button.colab-df-convert');
+          document.querySelector('#df-28652154-ee38-4164-844d-6b706aab5fa0 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-7e264e6a-1892-44bc-a04b-19843b9414c1');
+          const element = document.querySelector('#df-28652154-ee38-4164-844d-6b706aab5fa0');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -590,7 +668,245 @@ title="Print to PDF"
   </div>
 </div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># memisahkan atribut pada dataset dan menyimpannya pada sebuah variabel</span>
+<span class="n">fitur</span> <span class="o">=</span> <span class="n">data_kp</span><span class="p">[</span><span class="n">data_kp</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">9</span><span class="p">]]</span>
+ 
+<span class="c1"># memisahkan label pada dataset dan menyimpannya pada sebuah variabel</span>
+<span class="n">label</span> <span class="o">=</span> <span class="n">data_kp</span><span class="p">[</span><span class="s1">&#39;Classification&#39;</span><span class="p">]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      1
+1      1
+2      1
+3      1
+4      1
+      ..
+111    2
+112    2
+113    2
+114    2
+115    2
+Name: Classification, Length: 116, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import fungsi train_test_split untuk membagi data</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># Bagi dataset menjadi training set dan test set</span>
+<span class="c1"># 70% training dan 30% test</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">fitur</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># banyak data training dan data test</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(81, 9)
+(35, 9)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="metode-knn">
+<h1><strong>Metode KNN</strong><a class="headerlink" href="#metode-knn" title="Permalink to this headline">#</a></h1>
+<p>KNN adalah algoritma klasifikasi dengan mencari tetangga terdekat dengan memperhatikan kemiripan dan kedekatan dengan data yang lain</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import modul KNeighborsClassifier </span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="c1">#import metrics model untuk mengecek akuras </span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="c1">#mengecek akurasi jika k=1 sampai k=25</span>
+<span class="n">k_range</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">26</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">scores_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">k_range</span><span class="p">:</span>
+        <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+        <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+        <span class="n">y_pred</span><span class="o">=</span><span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="n">scores</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+        <span class="n">scores_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred</span><span class="p">))</span>
+
+<span class="n">scores</span>
+
+<span class="c1"># dapat dilihat hasil akurasi tidak begitu baik karena tidak ada akurasi</span>
+<span class="c1"># yang lebih dari 0.85</span>
+<span class="c1"># akurasi tertinggi ketika k = 1, 11, 21</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: 0.6571428571428571,
+ 2: 0.5714285714285714,
+ 3: 0.5714285714285714,
+ 4: 0.5428571428571428,
+ 5: 0.5714285714285714,
+ 6: 0.6571428571428571,
+ 7: 0.6,
+ 8: 0.6,
+ 9: 0.7428571428571429,
+ 10: 0.6571428571428571,
+ 11: 0.5428571428571428,
+ 12: 0.6,
+ 13: 0.6571428571428571,
+ 14: 0.7142857142857143,
+ 15: 0.6,
+ 16: 0.6571428571428571,
+ 17: 0.5714285714285714,
+ 18: 0.6285714285714286,
+ 19: 0.6,
+ 20: 0.6285714285714286,
+ 21: 0.6,
+ 22: 0.6285714285714286,
+ 23: 0.5428571428571428,
+ 24: 0.5142857142857142,
+ 25: 0.5714285714285714}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># modul matplotlib untuk melihat akurasi dalam bentuk graph</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#plot the relationship between K and the testing accuracy</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_range</span><span class="p">,</span><span class="n">scores_list</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Value of K for KNN&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Testing Accuracy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Testing Accuracy&#39;)
+</pre></div>
+</div>
+<img alt="_images/UTS_7_1.png" src="_images/UTS_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set n_neighbors = 1, 11, atau 21 karena dari pengecekan diatas akurasi tertinggi ada pada</span>
+<span class="c1"># k = 1, 11, dan 21 </span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">fitur</span><span class="p">,</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">x_new</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">48</span><span class="p">,</span><span class="mf">20.500000</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="mf">0.467409</span><span class="p">,</span><span class="mf">8.8071</span><span class="p">,</span><span class="mf">9.702400</span><span class="p">,</span><span class="mf">7.99585</span><span class="p">,</span><span class="mf">417.114</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">70</span><span class="p">,</span><span class="mf">5.500000</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.467409</span><span class="p">,</span><span class="mf">8.8071</span><span class="p">,</span><span class="mf">8.37648</span><span class="p">,</span><span class="mf">6.99585</span><span class="p">,</span><span class="mf">300.114</span><span class="p">]]</span>
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_new</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="n">y_predict</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">[</span><span class="n">y_predict</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/sklearn/base.py:451: UserWarning: X does not have valid feature names, but KNeighborsClassifier was fitted with feature names
+  &quot;X does not have valid feature names, but&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="metode-decision-tree">
+<h1><strong>Metode Decision Tree</strong><a class="headerlink" href="#metode-decision-tree" title="Permalink to this headline">#</a></h1>
+<p>Decision tree adalah algoritma machine learning yang menggunakan seperangkat aturan untuk membuat keputusan dengan struktur seperti pohon yang memodelkan kemungkinan hasil, biaya sumber daya, utilitas dan kemungkinan konsekuensi atau resiko. Konsepnya adalah dengan cara menyajikan algoritma dengan pernyataan bersyarat, yang meliputi cabang untuk mewakili langkah-langkah pengambilan keputusan yang dapat mengarah pada hasil yang menguntungkan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Decision Tree Classifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="c1"># Membuat objek Decision Tree classifer</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+
+<span class="c1"># Melatih Decision Tree Classifer</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># prediksi test dataset</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Akurasi:&quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">.</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi: 0.6285714285714286
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#implementasi Decision Tree ke dalam bentuk gambar</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">export_graphviz</span>
+<span class="n">export_graphviz</span><span class="p">(</span>
+    <span class="n">y_pred</span><span class="p">,</span>
+    <span class="n">out_file</span> <span class="o">=</span> <span class="s2">&quot;cancer_tree.dot&quot;</span><span class="p">,</span>
+    <span class="n">feature_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">,</span>	<span class="s1">&#39;BMI&#39;</span><span class="p">,</span>	<span class="s1">&#39;Glucose&#39;</span><span class="p">,</span>	<span class="s1">&#39;Insulin&#39;</span><span class="p">,</span>	<span class="s1">&#39;HOMA&#39;</span><span class="p">,</span>	<span class="s1">&#39;Leptin&#39;</span><span class="p">,</span>	<span class="s1">&#39;Adiponectin&#39;</span><span class="p">,</span>	<span class="s1">&#39;Resistin&#39;</span><span class="p">,</span>	<span class="s1">&#39;MCP.1&#39;</span><span class="p">],</span>
+    <span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="n">rounded</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">filled</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#setelah dijalankan maka akan ada file baru dengan nama iris_tree.dot</span>
+<span class="c1">#dibagian folder sebelah kiri, kemudian unduh dan gunakan image coverter untuk</span>
+<span class="c1">#mengubahnya dalam bentuk gambar</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">390143</span><span class="n">b688c7</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">rounded</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">filled</span> <span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1">#setelah dijalankan maka akan ada file baru dengan nama iris_tree.dot</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/sklearn/tree/_export.py</span> in <span class="ni">export_graphviz</span><span class="nt">(decision_tree, out_file, max_depth, feature_names, class_names, label, filled, leaves_parallel, impurity, node_ids, proportion, rotate, rounded, special_characters, precision, fontname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">860</span><span class="s2">     check_is_fitted(decision_tree)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span><span class="s2">     own_file = False</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span><span class="s2">     return_string = False</span>
+
+<span class="nn">/usr/local/lib/python3.7/dist-packages/sklearn/utils/validation.py</span> in <span class="ni">check_is_fitted</span><span class="nt">(estimator, attributes, msg, all_or_any)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1206</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1207</span><span class="s2">     if not hasattr(estimator, &quot;fit&quot;):</span>
+<span class="ne">-&gt; </span><span class="mi">1208</span><span class="s2">         raise TypeError(&quot;</span><span class="si">%s</span><span class="s2"> is not an estimator instance.&quot; % (estimator))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1209</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1210</span><span class="s2">     if attributes is not None:</span>
+
+<span class="ne">TypeError</span>: [1 1 1 2 2 1 1 1 1 2 1 1 2 2 1 1 1 1 2 2 1 2 1 2 2 1 1 1 1 1 1 2 2 1 2] is not an estimator instance.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">

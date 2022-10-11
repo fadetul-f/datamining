@@ -1,0 +1,60 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 664, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.7/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#implementasi Decision Tree ke dalam bentuk gambar
+from sklearn.tree import export_graphviz
+export_graphviz(
+    y_pred,
+    out_file = "cancer_tree.dot",
+    feature_names = ['Age',	'BMI',	'Glucose',	'Insulin',	'HOMA',	'Leptin',	'Adiponectin',	'Resistin',	'MCP.1'],
+    class_names = [1, 2],
+    rounded= True,
+    filled =True)
+
+#setelah dijalankan maka akan ada file baru dengan nama iris_tree.dot
+#dibagian folder sebelah kiri, kemudian unduh dan gunakan image coverter untuk
+#mengubahnya dalam bentuk gambar
+------------------
+
+[0;31m[0m
+[0;31mTypeError[0mTraceback (most recent call last)
+[0;32m<ipython-input-9-390143b688c7>[0m in [0;36m<module>[0;34m[0m
+[1;32m      7[0m     [0mclass_names[0m [0;34m=[0m [0;34m[[0m[0;36m1[0m[0;34m,[0m [0;36m2[0m[0;34m][0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      8[0m     [0mrounded[0m[0;34m=[0m [0;32mTrue[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 9[0;31m     filled =True)
+[0m[1;32m     10[0m [0;34m[0m[0m
+[1;32m     11[0m [0;31m#setelah dijalankan maka akan ada file baru dengan nama iris_tree.dot[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/sklearn/tree/_export.py[0m in [0;36mexport_graphviz[0;34m(decision_tree, out_file, max_depth, feature_names, class_names, label, filled, leaves_parallel, impurity, node_ids, proportion, rotate, rounded, special_characters, precision, fontname)[0m
+[1;32m    858[0m     """
+[1;32m    859[0m [0;34m[0m[0m
+[0;32m--> 860[0;31m     [0mcheck_is_fitted[0m[0;34m([0m[0mdecision_tree[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    861[0m     [0mown_file[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    862[0m     [0mreturn_string[0m [0;34m=[0m [0;32mFalse[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.7/dist-packages/sklearn/utils/validation.py[0m in [0;36mcheck_is_fitted[0;34m(estimator, attributes, msg, all_or_any)[0m
+[1;32m   1206[0m [0;34m[0m[0m
+[1;32m   1207[0m     [0;32mif[0m [0;32mnot[0m [0mhasattr[0m[0;34m([0m[0mestimator[0m[0;34m,[0m [0;34m"fit"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1208[0;31m         [0;32mraise[0m [0mTypeError[0m[0;34m([0m[0;34m"%s is not an estimator instance."[0m [0;34m%[0m [0;34m([0m[0mestimator[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1209[0m [0;34m[0m[0m
+[1;32m   1210[0m     [0;32mif[0m [0mattributes[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mTypeError[0m: [1 1 1 2 2 1 1 1 1 2 1 1 2 2 1 1 1 1 2 2 1 2 1 2 2 1 1 1 1 1 1 2 2 1 2] is not an estimator instance.
+TypeError: [1 1 1 2 2 1 1 1 1 2 1 1 2 2 1 1 1 1 2 2 1 2 1 2 2 1 1 1 1 1 1 2 2 1 2] is not an estimator instance.
+
