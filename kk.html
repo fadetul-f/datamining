@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>K-Means Clustering (Tugas 5) &#8212; Data Mining</title>
+    <title>&lt;no title&gt; &#8212; Data Mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Decision Tree (Tugas 6)" href="Tugas6.html" />
-    <link rel="prev" title="Naive Bayes (Tugas 4)" href="Tugas4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -118,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tugas
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas1.html">
    Dissimilarity (Tugas 1)
@@ -139,8 +137,8 @@ const thebe_selector_output = ".output, .cell_output"
    Naive Bayes (Tugas 4)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas5.html">
    K-Means Clustering (Tugas 5)
   </a>
  </li>
@@ -246,7 +244,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/fadetul-f/datamining/docs?urlpath=tree/_sources/Tugas5.ipynb"
+        <a href="https://mybinder.org/v2/gh/fadetul-f/datamining/docs?urlpath=tree/_sources/kk.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -264,7 +262,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/fadetul-f/datamining/blob/docs/_sources/Tugas5.ipynb"
+        <a href="https://colab.research.google.com/github/fadetul-f/datamining/blob/docs/_sources/kk.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -324,7 +322,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/fadetul-f/datamining/issues/new?title=Issue%20on%20page%20%2FTugas5.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/fadetul-f/datamining/issues/new?title=Issue%20on%20page%20%2Fkk.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -352,7 +350,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/Tugas5.ipynb"
+        <a href="_sources/kk.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,23 +387,50 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>K-Means Clustering (Tugas 5)</h1>
+                <h1><no title></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -413,21 +438,30 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="k-means-clustering-tugas-5">
-<h1>K-Means Clustering (Tugas 5)<a class="headerlink" href="#k-means-clustering-tugas-5" title="Permalink to this headline">#</a></h1>
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import semua library yang dibutuhkan</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">AgglomerativeClustering</span>
+<span class="kn">import</span> <span class="nn">scipy.cluster.hierarchy</span> <span class="k">as</span> <span class="nn">sch</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="c1">#read in the data using pandas</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/datamining/tugas/Iris.csv&#39;</span><span class="p">)</span>
-<span class="c1">#check data has been read in properly</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membaca data </span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/datamining/tugas/data.csv&#39;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-40d323d7-ac99-40c9-814f-1a95e84ac0dc">
+  <div id="df-2dea3a98-0f26-453e-917d-89911981d0f7">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -447,64 +481,64 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Id</th>
-      <th>SepalLengthCm</th>
-      <th>SepalWidthCm</th>
-      <th>PetalLengthCm</th>
-      <th>PetalWidthCm</th>
-      <th>Species</th>
+      <th>JENIS KELAMIN</th>
+      <th>HB</th>
+      <th>Umur</th>
+      <th>BB (Kg)</th>
+      <th>TENSI</th>
+      <th>TEMPAT LAHIR</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>1</td>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>15.0</td>
+      <td>52</td>
+      <td>77</td>
+      <td>130/80</td>
+      <td>LAMONGAN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>1</td>
+      <td>13.0</td>
+      <td>57</td>
+      <td>68</td>
+      <td>130/80</td>
+      <td>MALANG</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>3</td>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>1</td>
+      <td>12.1</td>
+      <td>39</td>
+      <td>70</td>
+      <td>130/80</td>
+      <td>LAMONGAN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4</td>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>0</td>
+      <td>12.2</td>
+      <td>52</td>
+      <td>65</td>
+      <td>150/80</td>
+      <td>SIDIKALING</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5</td>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Iris-setosa</td>
+      <td>1</td>
+      <td>13.8</td>
+      <td>57</td>
+      <td>80</td>
+      <td>140/80</td>
+      <td>MOJOKERTO</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-40d323d7-ac99-40c9-814f-1a95e84ac0dc')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2dea3a98-0f26-453e-917d-89911981d0f7')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -555,12 +589,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-40d323d7-ac99-40c9-814f-1a95e84ac0dc button.colab-df-convert');
+          document.querySelector('#df-2dea3a98-0f26-453e-917d-89911981d0f7 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-40d323d7-ac99-40c9-814f-1a95e84ac0dc');
+          const element = document.querySelector('#df-2dea3a98-0f26-453e-917d-89911981d0f7');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -581,7 +615,80 @@ title="Print to PDF"
   </div>
 </div></div>
 </div>
-</section>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># label_encoder object</span>
+<span class="n">label_encoder</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">LabelEncoder</span><span class="p">()</span>
+  
+<span class="c1"># Encode labels in column &#39;gender&#39;.</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;TENSI&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;TENSI&#39;</span><span class="p">])</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;TENSI&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Encode labels in column &#39;Ascites&#39;.</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;TEMPAT LAHIR&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">label_encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;TEMPAT LAHIR&#39;</span><span class="p">])</span>
+<span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;TEMPAT LAHIR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 7,  9, 19, 12,  0,  8, 22, 17,  6, 13,  4, 23, 21, 20,  5,  3, 14,
+       15, 18,  1,  2, 11, 10, 16])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>AHC</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dendrogram</span> <span class="o">=</span> <span class="n">sch</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">sch</span><span class="o">.</span><span class="n">linkage</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/kk_5_0.png" src="_images/kk_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">AgglomerativeClustering</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">affinity</span><span class="o">=</span><span class="s1">&#39;euclidean&#39;</span><span class="p">,</span> <span class="n">linkage</span><span class="o">=</span><span class="s1">&#39;single&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">labels_</span>
+<span class="n">labels</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 2, 0, 4, 0, 0, 1, 0, 0, 0, 4, 0, 0, 1, 0, 1, 1, 4, 4, 0,
+       4, 1, 1, 4, 0, 1, 4, 4, 4, 1, 4, 1, 4, 1, 4, 0, 1, 4, 1, 4, 0, 4,
+       0, 4, 1, 1, 1, 1, 0, 4, 1, 0, 0, 0, 0, 4, 4, 4, 1, 3, 1, 1, 4, 1,
+       4, 4, 0, 0, 1, 4, 4, 4, 4, 0, 4, 4, 4, 4, 0, 0, 4, 1, 4, 4, 0, 4,
+       1, 1, 4, 3, 4, 0, 4, 4, 1, 4, 4, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">labels</span><span class="o">==</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/kk_7_0.png" src="_images/kk_7_0.png" />
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -610,20 +717,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Tugas4.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Naive Bayes (Tugas 4)</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="Tugas6.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Decision Tree (Tugas 6)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

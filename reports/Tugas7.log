@@ -1,0 +1,41 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+new_order = ['kode_kontrak',  'pendapatan_setahun_juta',	'durasi_pinjaman_bulan',	'jumlah_tanggungan', '0 - 30 days',
+             '31 - 45 days',  '46 - 60 days', 'TIDAK',   'YA', '61 - 90 days',  '> 90 days',   'risk_rating']
+print(data_cs[data_cs.columns[new_order]]) 
+------------------
+
+[0;31m[0m
+[0;31mIndexError[0mTraceback (most recent call last)
+[0;32m<ipython-input-7-ab7a7d5f8dbb>[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m new_order = ['kode_kontrak',  'pendapatan_setahun_juta',	'durasi_pinjaman_bulan',	'jumlah_tanggungan', '0 - 30 days',
+[1;32m      2[0m              '31 - 45 days',  '46 - 60 days', 'TIDAK',   'YA', '61 - 90 days',  '> 90 days',   'risk_rating']
+[0;32m----> 3[0;31m [0mprint[0m[0;34m([0m[0mdata_cs[0m[0;34m[[0m[0mdata_cs[0m[0;34m.[0m[0mcolumns[0m[0;34m[[0m[0mnew_order[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/usr/local/lib/python3.8/dist-packages/pandas/core/indexes/base.py[0m in [0;36m__getitem__[0;34m(self, key)[0m
+[1;32m   4614[0m             [0mkey[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0masarray[0m[0;34m([0m[0mkey[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mbool[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4615[0m [0;34m[0m[0m
+[0;32m-> 4616[0;31m         [0mresult[0m [0;34m=[0m [0mgetitem[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   4617[0m         [0;32mif[0m [0;32mnot[0m [0mis_scalar[0m[0;34m([0m[0mresult[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4618[0m             [0;31m# error: Argument 1 to "ndim" has incompatible type "Union[ExtensionArray,[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mIndexError[0m: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+IndexError: only integers, slices (`:`), ellipsis (`...`), numpy.newaxis (`None`) and integer or boolean arrays are valid indices
+

@@ -158,6 +158,37 @@ const thebe_selector_output = ".output, .cell_output"
    </strong>
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas7.html">
+   <strong>
+    Tugas 7 Modeling Data
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas8.html">
+   <strong>
+    Tugas 8 Transformasi dengan Normalisasi Data
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas9.html">
+   Studi Kasus Kredit Score dengan Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas10.html">
+   Ensamble Stacking (Tugas 12)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="UAS.html">
+   <strong>
+    Aplikasi untuk menganalisis penyakit sirosis
+   </strong>
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -430,6 +461,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="c1">#membaca data iris</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;/content/drive/MyDrive/datamining/tugas/Iris.csv&#39;</span><span class="p">)</span>
 <span class="c1">#menampilkan 5 data teratas</span>
@@ -439,7 +473,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8b89d090-b6b4-44a1-aaa1-beccb7bea193">
+  <div id="df-dd34e2dd-d808-4c65-96e1-701ffa1bfbee">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -516,7 +550,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8b89d090-b6b4-44a1-aaa1-beccb7bea193')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-dd34e2dd-d808-4c65-96e1-701ffa1bfbee')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -567,12 +601,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8b89d090-b6b4-44a1-aaa1-beccb7bea193 button.colab-df-convert');
+          document.querySelector('#df-dd34e2dd-d808-4c65-96e1-701ffa1bfbee button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8b89d090-b6b4-44a1-aaa1-beccb7bea193');
+          const element = document.querySelector('#df-dd34e2dd-d808-4c65-96e1-701ffa1bfbee');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -592,6 +626,31 @@ title="Print to PDF"
     </div>
   </div>
 </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">del</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Id&#39;</span><span class="p">])</span>
+<span class="c1">#memisahkan fitur dan label</span>
+<span class="n">feature</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">label</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1">#membagi data training dan testing</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#klasifikasi menggunakan decision tree</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
